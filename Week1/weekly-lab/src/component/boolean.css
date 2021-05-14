@@ -1,0 +1,19 @@
+h1 span {
+  color: salmon;
+}
+
+.left,
+.right {
+  border: none;
+  border-radius: 5vw;
+  padding: 0.5rem 1rem;
+  background-color: rosybrown;
+  margin: 1rem;
+}
+
+.left:hover,
+.right:hover {
+  background-color: white;
+  border: 0.2rem solid rosybrown;
+}
+/*# sourceMappingURL=boolean.css.map */
