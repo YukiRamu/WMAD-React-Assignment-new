@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import "./Meme.css";
 import Data from "../API/Data";
 
@@ -28,14 +29,13 @@ class Meme extends Component {
             value={this.state.secondText}
             onChange={(event) => { this.inputChange(event); }} //"elem" represents input itself
           />
-
-          <button type="button" className="generateBtn" onClick={() => {
-            this.showMeme();
-          }}>Generate</button>
+          {/* 
+          <button type="button" className="generateBtn" onClick={() => {this.showMeme();}}>Generate</button> */}
+          <button type="button" className="generateBtn" onClick={this.showMeme}>Generate</button>
 
         </form>
 
-        <div className="MemePanel">
+        <div className="MemePanel" ref="MemePanel">
           <p className="first">{this.state.firstText}</p>
           <img src={this.state.imageURL} alt="meme"></img>
           <p className="second">{this.state.secondText}</p>
@@ -52,12 +52,14 @@ class Meme extends Component {
   //When the button is clicked
   showMeme = async () => {
     //variables
-    const memePanel = document.querySelector(".MemePanel");
-    const meme = document.querySelector(".Meme");
+    const memePanel = ReactDOM.findDOMNode(this.refs.MemePanel);
+    console.log(memePanel);
+
+    console.log(this.props.name);
+    this.props.name("passing parameter"); //change to display flex
 
     //show panel
     memePanel.style.display = "block";
-    meme.style.display = "flex";
 
     //get data 
     let imageData = await Data();
@@ -67,7 +69,6 @@ class Meme extends Component {
     //generate random index
     let randomIndex = Math.floor(Math.random() * memeArray.length);
     let randomImgURL = memeArray[randomIndex]["url"];
-    console.log(randomImgURL);
 
     //setState imageURL
     this.setState({
