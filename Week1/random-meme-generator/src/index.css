@@ -1,0 +1,15 @@
+body {
+  margin: 0;
+}
+
+body .root {
+  background-image: url(https://i.gifer.com/40iN.gif);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  overflow: hidden;
+  font-family: 'Alfa Slab One', cursive;
+}
+/*# sourceMappingURL=index.css.map */

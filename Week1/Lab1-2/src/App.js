@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import logo from './logo.svg';
 import './App.css';
 import ShowProps from "./components/Box/Box";
 import People from "./components/People/People";
@@ -28,4 +27,3 @@ const App = () => {
 };
 
 export default App;
-// export default People;
