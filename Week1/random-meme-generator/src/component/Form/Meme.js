@@ -20,17 +20,15 @@ class Meme extends Component {
             className="firstText"
             placeholder="Enter your first text"
             value={this.state.firstText}
-            onChange={(event) => { this.inputChange(event); }} //"elem" represents input itself
+            onChange={(event) => { this.inputChange(event); }} //"event" represents input itself
           />
           <input
             type="text"
             className="secondText"
             placeholder="Enter your second text"
             value={this.state.secondText}
-            onChange={(event) => { this.inputChange(event); }} //"elem" represents input itself
+            onChange={(event) => { this.inputChange(event); }} //"event" represents input itself
           />
-          {/* 
-          <button type="button" className="generateBtn" onClick={() => {this.showMeme();}}>Generate</button> */}
           <button type="button" className="generateBtn" onClick={this.showMeme}>Generate</button>
 
         </form>
@@ -53,18 +51,14 @@ class Meme extends Component {
   showMeme = async () => {
     //variables
     const memePanel = ReactDOM.findDOMNode(this.refs.MemePanel);
-    console.log(memePanel);
-
-    console.log(this.props.name);
-    this.props.name("passing parameter"); //change to display flex
 
     //show panel
     memePanel.style.display = "block";
+    this.props.func(); //call the method in App.js change to display flex
 
     //get data 
     let imageData = await Data();
     let memeArray = imageData["data"]["memes"]; //array of object
-    console.log(memeArray);
 
     //generate random index
     let randomIndex = Math.floor(Math.random() * memeArray.length);
