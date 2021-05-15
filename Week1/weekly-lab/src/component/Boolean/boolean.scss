@@ -1,0 +1,20 @@
+.Boolean {
+  margin: 1rem;
+  h1 {
+    span {
+      color: salmon;
+    }
+  }
+  .left,
+  .right {
+    border: none;
+    border-radius: 5vw;
+    padding: 0.5rem 1rem;
+    background-color: rosybrown;
+    margin: 1rem;
+    &:hover {
+      background-color: white;
+      border: 0.2rem solid rosybrown;
+    }
+  }
+}

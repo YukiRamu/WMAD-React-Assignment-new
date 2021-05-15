@@ -10,7 +10,7 @@ class Boolean extends Component {
   render() {
     return (
       <>
-        <h1>This is the <span> {this.state.text} </span>Text</h1>
+        <h2>This is the <span> {this.state.text} </span>Text</h2>
         <button type="button" className="left" onClick={(event) => { this.changeText(event); }}>Show Left</button>
         <button type="button" className="right" onClick={(event) => { this.changeText(event); }} >Show Right</button>
       </>
@@ -18,7 +18,6 @@ class Boolean extends Component {
   };
 
   changeText = (event) => {
-    console.log("hi hi", event.target);
     if (event.target.className === "left") {
       this.setState({ isLeft: true, text: "Left" });
     } else {

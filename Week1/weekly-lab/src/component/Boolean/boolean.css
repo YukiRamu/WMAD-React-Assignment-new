@@ -1,9 +1,13 @@
-h1 span {
+.Boolean {
+  margin: 1rem;
+}
+
+.Boolean h1 span {
   color: salmon;
 }
 
-.left,
-.right {
+.Boolean .left,
+.Boolean .right {
   border: none;
   border-radius: 5vw;
   padding: 0.5rem 1rem;
@@ -11,8 +15,8 @@ h1 span {
   margin: 1rem;
 }
 
-.left:hover,
-.right:hover {
+.Boolean .left:hover,
+.Boolean .right:hover {
   background-color: white;
   border: 0.2rem solid rosybrown;
 }

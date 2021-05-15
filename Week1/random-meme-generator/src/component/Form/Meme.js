@@ -30,7 +30,6 @@ class Meme extends Component {
             onChange={(event) => { this.inputChange(event); }} //"event" represents input itself
           />
           <button type="button" className="generateBtn" onClick={this.showMeme}>Generate</button>
-
         </form>
 
         <div className="MemePanel" ref="MemePanel">
@@ -49,12 +48,10 @@ class Meme extends Component {
 
   //When the button is clicked
   showMeme = async () => {
-    //variables
-    const memePanel = ReactDOM.findDOMNode(this.refs.MemePanel);
-
     //show panel
+    const memePanel = ReactDOM.findDOMNode(this.refs.MemePanel);
     memePanel.style.display = "block";
-    this.props.func(); //call the method in App.js change to display flex
+    this.props.func(); //call the method in App.js : change to display flex
 
     //get data 
     let imageData = await Data();
