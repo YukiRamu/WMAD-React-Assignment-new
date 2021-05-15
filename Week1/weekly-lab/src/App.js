@@ -23,6 +23,7 @@ const App = () => {
     }, 3000);
   };
 
+
   return (
     <>
       <h1>Weekly Assignment Option 2</h1>
@@ -33,7 +34,7 @@ const App = () => {
         </div>
         {/* Option 2: task 2 */}
         <div className="Student">
-          <Student array={studentList} />
+          <Student setStudent={studentList} />
         </div>
       </div>
     </>

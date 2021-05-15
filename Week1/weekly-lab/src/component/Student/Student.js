@@ -2,7 +2,9 @@ import React from 'react';
 import "./student.css";
 
 const Student = (props) => {
-  console.log(props.array);
+  console.log(props);
+
+
   // let list = props.array();
   // console.log(list)
   // let studentHTML = props.array.map((elem) => {
@@ -19,7 +21,7 @@ const Student = (props) => {
   );
 
   //hide <h2> after 3 seconds
-  
+
 };
 
 export default Student;
