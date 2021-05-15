@@ -1,6 +1,6 @@
 {
     "version": 3,
-    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,MAAM,EAAE,IAAI;CACb",
+    "mappings": "AAAA,AAAA,QAAQ,CAAC;EACP,MAAM,EAAE,IAAI;CAMb;;AAPD,AAGI,QAHI,CAEN,aAAa,CACX,YAAY,CAAC;EACX,gBAAgB,EAAE,OAAO;CAC1B",
     "sources": [
         "student.scss"
     ],

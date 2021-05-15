@@ -1,0 +1,23 @@
+.vote {
+  width: 60%;
+  margin: auto;
+  .panel {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: center;
+    border: 0.1rem solid gray;
+    padding: 1rem;
+    margin: 1rem;
+    p {
+      margin: 1rem;
+    }
+    .count {
+      font-size: 2rem;
+    }
+    button {
+      width: 10vw;
+      margin-left: 1rem;
+    }
+  }
+}

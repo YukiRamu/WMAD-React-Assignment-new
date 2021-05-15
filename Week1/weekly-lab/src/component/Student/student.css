@@ -1,4 +1,8 @@
 .Student {
   margin: 1rem;
 }
+
+.Student .studentPanel .studentList {
+  background-color: thistle;
+}
 /*# sourceMappingURL=student.css.map */

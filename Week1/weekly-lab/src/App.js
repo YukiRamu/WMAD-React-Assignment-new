@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import './App.css';
 import Boolean from "./component/Boolean/Boolean";
 import Student from "./component/Student/Student";
@@ -9,20 +9,17 @@ const App = () => {
   const [studentList, setStudent] = useState([]);
 
   //when the window is loaded. wait 3 sec and update state hook
+  //to prevent infinite loop
   window.onload = () => {
-    setTimeout(() => {
-      setStudent(studentList.push(
-        "Jonny Depp",
-        "John Wick",
-        "Paul Walker",
-        "Emma Watson",
-        "Harry Potter",
-        "Steve Jobs"
-      ));
-      console.log(studentList);
-    }, 3000);
+    setStudent([
+      "Jonny Depp",
+      "John Wick",
+      "Paul Walker",
+      "Emma Watson",
+      "Harry Potter",
+      "Steve Jobs"]);
+    console.log(studentList);
   };
-
 
   return (
     <>
@@ -34,7 +31,7 @@ const App = () => {
         </div>
         {/* Option 2: task 2 */}
         <div className="Student">
-          <Student setStudent={studentList} />
+          <Student array={studentList} />
         </div>
       </div>
     </>

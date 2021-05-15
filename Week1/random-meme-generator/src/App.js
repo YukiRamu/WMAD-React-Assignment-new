@@ -15,10 +15,16 @@ class App extends Component {
         <header className="App-header">
           <h1>Generate Your Meme!</h1>
         </header>
+
+        {/* how to update the style
+          #1 set attribute "style" in <main> tag
+          #2 use "state" and "updateStyle" function to change the attribue
+          #3 the expected result is <style = {"display": "flex"}> */}
         <main className="Meme" style={this.state.style}>
           {/* pass function to child as props*/}
           <Meme func={this.updateStyle} />
         </main>
+
         <footer className="footer">
           ©Yuki Matsubara 2021. All Rights Reserved.
           <a href="https://www.linkedin.com/in/yukimatsubara/" target="_blank"><i className="fab fa-linkedin"></i></a>
