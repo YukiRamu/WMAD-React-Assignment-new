@@ -1,8 +1,12 @@
+@import "../../color";
+
 .Boolean {
   margin: 1rem;
-  h1 {
+  h2 {
     span {
-      color: salmon;
+      color: $color4;
+      text-decoration: underline;
+      text-transform: uppercase;
     }
   }
   .left,
@@ -10,11 +14,13 @@
     border: none;
     border-radius: 5vw;
     padding: 0.5rem 1rem;
-    background-color: rosybrown;
+    background-color: $color5;
+    color: $color2;
     margin: 1rem;
     &:hover {
-      background-color: white;
-      border: 0.2rem solid rosybrown;
+      background-color: $color2;
+      border: 0.2rem solid $color5;
+      color: $color5;
     }
   }
 }

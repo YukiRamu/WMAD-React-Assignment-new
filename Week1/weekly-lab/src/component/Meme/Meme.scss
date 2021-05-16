@@ -1,0 +1,93 @@
+@import "../../color";
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+// width: 80vw;
+// min-height: 50vh;
+// text-align: center;
+// margin: auto;
+// padding-top: 3.5rem;
+// background-color: rgba(255, 255, 255, 0.669);
+// animation: fadeIn 1s;
+
+.memeSection {
+  width: 80vw;
+  min-height: 50vh;
+  text-align: center;
+  margin: auto;
+  border-radius: 5vw;
+  background-color: rgba(255, 255, 255, 0.669);
+  animation: fadeIn 1s;
+  margin-bottom: 2rem;
+  .MemeForm {
+    flex-direction: column;
+    display: flex;
+    padding: 3rem 2rem 3rem 2rem;
+    .firstText,
+    .secondText {
+      margin: 1rem;
+      border: slategray 0.1rem solid;
+      border-radius: 3vw;
+      padding: 1rem 2rem;
+      background-color: transparent;
+      &:focus {
+        outline: none;
+        border: 0.2rem solid yellow;
+      }
+    }
+    .generateBtn {
+      width: fit-content;
+      border: none;
+      margin-left: 1rem;
+      border-radius: 3vw;
+      padding: 1rem 2rem;
+      background-color: crimson;
+      color: $color2;
+      margin-top: 1rem;
+      &:focus {
+        outline: none;
+        border: 0.1rem solid crimson;
+        background-color: rgba(255, 255, 255, 0.476);
+        color: crimson;
+      }
+    }
+  }
+  .MemePanel {
+    display: none;
+    position: relative;
+    width: 100%;
+    padding: 3rem;
+    .first {
+      position: absolute;
+      top: 10%;
+      left: 10%;
+      font-size: 2rem;
+      margin: auto;
+      width: 80%;
+      text-align: left;
+      color: crimson;
+      text-shadow: 0.5rem 0.5rem 1rem white;
+    }
+    .second {
+      position: absolute;
+      bottom: 10%;
+      right: 10%;
+      font-size: 2rem;
+      text-align: right;
+      color: yellow;
+      text-shadow: 0.5rem 0.5rem 1rem white;
+    }
+    img {
+      width: 100%;
+      box-shadow: 0rem 0rem 3rem black;
+      animation: fadeIn 1s;
+    }
+  }
+}

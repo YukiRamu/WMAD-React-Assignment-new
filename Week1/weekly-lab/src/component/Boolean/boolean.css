@@ -1,9 +1,12 @@
+/* color palette*/
 .Boolean {
   margin: 1rem;
 }
 
-.Boolean h1 span {
-  color: salmon;
+.Boolean h2 span {
+  color: #7a392c;
+  text-decoration: underline;
+  text-transform: uppercase;
 }
 
 .Boolean .left,
@@ -11,13 +14,15 @@
   border: none;
   border-radius: 5vw;
   padding: 0.5rem 1rem;
-  background-color: rosybrown;
+  background-color: #a77f75;
+  color: #ffffff;
   margin: 1rem;
 }
 
 .Boolean .left:hover,
 .Boolean .right:hover {
-  background-color: white;
-  border: 0.2rem solid rosybrown;
+  background-color: #ffffff;
+  border: 0.2rem solid #a77f75;
+  color: #a77f75;
 }
 /*# sourceMappingURL=boolean.css.map */

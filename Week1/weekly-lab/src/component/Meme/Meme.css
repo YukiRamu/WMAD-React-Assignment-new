@@ -1,0 +1,113 @@
+/* color palette*/
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.memeSection {
+  width: 80vw;
+  min-height: 50vh;
+  text-align: center;
+  margin: auto;
+  border-radius: 5vw;
+  background-color: rgba(255, 255, 255, 0.669);
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+  margin-bottom: 2rem;
+}
+
+.memeSection .MemeForm {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 3rem 2rem 3rem 2rem;
+}
+
+.memeSection .MemeForm .firstText,
+.memeSection .MemeForm .secondText {
+  margin: 1rem;
+  border: slategray 0.1rem solid;
+  border-radius: 3vw;
+  padding: 1rem 2rem;
+  background-color: transparent;
+}
+
+.memeSection .MemeForm .firstText:focus,
+.memeSection .MemeForm .secondText:focus {
+  outline: none;
+  border: 0.2rem solid yellow;
+}
+
+.memeSection .MemeForm .generateBtn {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border: none;
+  margin-left: 1rem;
+  border-radius: 3vw;
+  padding: 1rem 2rem;
+  background-color: crimson;
+  color: #ffffff;
+  margin-top: 1rem;
+}
+
+.memeSection .MemeForm .generateBtn:focus {
+  outline: none;
+  border: 0.1rem solid crimson;
+  background-color: rgba(255, 255, 255, 0.476);
+  color: crimson;
+}
+
+.memeSection .MemePanel {
+  display: none;
+  position: relative;
+  width: 100%;
+  padding: 3rem;
+}
+
+.memeSection .MemePanel .first {
+  position: absolute;
+  top: 10%;
+  left: 10%;
+  font-size: 2rem;
+  margin: auto;
+  width: 80%;
+  text-align: left;
+  color: crimson;
+  text-shadow: 0.5rem 0.5rem 1rem white;
+}
+
+.memeSection .MemePanel .second {
+  position: absolute;
+  bottom: 10%;
+  right: 10%;
+  font-size: 2rem;
+  text-align: right;
+  color: yellow;
+  text-shadow: 0.5rem 0.5rem 1rem white;
+}
+
+.memeSection .MemePanel img {
+  width: 100%;
+  -webkit-box-shadow: 0rem 0rem 3rem black;
+          box-shadow: 0rem 0rem 3rem black;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+}
+/*# sourceMappingURL=Meme.css.map */

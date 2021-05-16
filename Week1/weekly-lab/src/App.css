@@ -1,15 +1,160 @@
-h1 {
-  text-align: center;
-  margin-bottom: 0;
-}
-
-.App {
+/* color palette*/
+.Header {
+  position: fixed;
+  top: 0;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #cd7371be;
+  color: #ffffff;
+  z-index: 5;
+}
+
+.Header h1 {
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.Header .nav {
+  margin-left: 3rem;
+}
+
+.Header .nav .nav-link {
+  color: #ffffff;
+}
+
+.Header .nav .nav-link:hover {
+  color: #7a392c;
+  font-weight: bold;
+  border-bottom: 0.1rem solid #7a392c;
+}
+
+.App {
+  background-image: url(./bg1.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 100vh;
+  padding-top: 3.5rem;
+}
+
+.App .Boolean {
+  width: 100%;
+  text-align: center;
+  border-radius: 4vw;
+  background-color: rgba(255, 255, 255, 0.669);
+  padding: 1rem;
+}
+
+.App .Student {
+  width: 100%;
+  text-align: center;
+  border-radius: 5vw;
+  background-color: rgba(255, 255, 255, 0.669);
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.App .Student .shuffleButton {
+  border: none;
+  border-radius: 5vw;
+  padding: 0.5rem 1rem;
+  background-color: #a77f75;
+  color: #ffffff;
+  margin: 1rem;
+}
+
+.App .Student .shuffleButton:hover {
+  background-color: #ffffff;
+  border: 0.2rem solid #a77f75;
+  color: #a77f75;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.Meme {
+  background-image: url(https://i.gifer.com/40iN.gif);
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+  padding-top: 3.5rem;
+  overflow: hidden;
+  font-family: "Alfa Slab One", cursive;
+}
+
+.Meme h2 {
+  font-family: "Monoton", cursive;
+  color: yellow;
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.Vote {
+  padding-top: 3.5rem;
+  background-image: url(./bg2.jpg);
+  background-position: center bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 100vh;
+}
+
+.Vote h2 {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer {
+  text-align: center;
+  padding: 1rem;
+  background-color: #cd7371be;
+  color: #ffffff;
+}
+
+.footer i {
+  color: yellow;
+}
+
+.footer i:hover {
+  color: crimson;
 }
 /*# sourceMappingURL=App.css.map */

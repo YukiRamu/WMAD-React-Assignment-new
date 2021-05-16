@@ -1,8 +1,49 @@
-.Student {
-  margin: 1rem;
+/* color palette*/
+@-webkit-keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
+}
+@keyframes scaleUp {
+  0% {
+    -webkit-transform: scale(0.5);
+            transform: scale(0.5);
+  }
+  100% {
+    -webkit-transform: scale(2);
+            transform: scale(2);
+  }
 }
 
-.Student .studentPanel .studentList {
-  background-color: thistle;
+.studentPanel .loading {
+  font-size: 2rem;
+  color: #7a392c;
+  padding: 1rem;
+  text-align: center;
+  -webkit-animation: scaleUp 3s linear;
+          animation: scaleUp 3s linear;
+}
+
+.studentPanel .student {
+  background-color: #fadb8c;
+  padding: 0.5rem;
+  width: 60%;
+  margin: auto;
+  margin-bottom: 1rem;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.studentPanel .student:hover {
+  -webkit-transform: translateX(-5%);
+          transform: translateX(-5%);
+  background-color: #ffffff;
+  border: 0.1rem solid #fadb8c;
+  color: #cd7371be;
 }
 /*# sourceMappingURL=student.css.map */

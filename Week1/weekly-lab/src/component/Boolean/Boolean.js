@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./boolean.css";
 
+//class component
 class Boolean extends Component {
   state = {
     isLeft: true,
