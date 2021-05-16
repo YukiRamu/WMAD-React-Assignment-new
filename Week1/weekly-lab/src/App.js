@@ -44,13 +44,6 @@ const App = () => {
     setStudent(newArray);
   };
 
-  /* ================== Meme.js ================== */
-  //would like to update Meme class display none to flex when the button is clicked on child 
-
-
-
-  /* ================== Vote.js ================== */
-
   //return
   return (
     <>
@@ -78,12 +71,7 @@ const App = () => {
       </section>
 
       {/* Meme */}
-      {/* how to update the style
-          #1 set attribute "style" in <main> tag
-          #2 use "state" and "updateStyle" function to change the attribue
-          #3 the expected result is <style = {"display": "flex"}> */}
       <section className="Meme" id="Meme">
-        {/* pass function to child as props*/}
         <h2>Generate Your Meme!</h2>
         <Meme />
       </section>

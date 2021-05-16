@@ -15,12 +15,18 @@ const Meme = () => {
   //When the button is clicked
   const showMeme = async () => {
     //change display and show image
+    {/* how to update the style
+      #1 set attribute "style" in <div> tag memeSection class
+      #2 use "state" and "updateStyle" function to change the attribue
+      #3 the expected result is <style = {"display": "flex"}> */}
     setDisplay({ "display": "flex" });
     setVisibility({ "display": "block" });
 
     //get data 
     let imageData = await Data();
     let memeArray = imageData["data"]["memes"]; //array of object
+
+    console.log(memeArray);
 
     //generate random index
     let randomIndex = Math.floor(Math.random() * memeArray.length);
