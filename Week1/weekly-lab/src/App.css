@@ -23,6 +23,15 @@
   margin-left: 2rem;
 }
 
+.Header h1 a {
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.Header h1 a:hover {
+  color: #7a392c;
+}
+
 .Header .nav {
   margin-left: 3rem;
 }

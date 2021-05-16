@@ -48,7 +48,7 @@ const App = () => {
   return (
     <>
       <header className="Header">
-        <h1>React.js App</h1>
+        <h1><a href="../public/index.html">React.js App</a></h1>
         <nav className="nav">
           <a className="nav-link" href="#App">Right/Left</a>
           <a className="nav-link" href="#App">Student List</a>
