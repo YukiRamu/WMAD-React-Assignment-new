@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import "./User.css";
 
 const User = (props) => {
-
-  console.log(props.user);
+  //state hook
+  console.log("props is ", props);
   return (
     <>
       <div>

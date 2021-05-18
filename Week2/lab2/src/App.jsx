@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from "react";
 import './App.css';
-import User from "./component/Form/Form";
-import Form from "./component/User/User";
+import Form from "./component/Form/Form.jsx";
+import User from "./component/User/User.jsx";
 
 const App = () => {
   //state hook
-  const [userlist, setUserList] = useState({
-    name: "default usre name",
-    email: "example@gmail.com",
-    phrase: "Your phrase here"
-  });
+  const [userlist, setUserList] = useState();
 
-  //This will be changed to fetch User List later
+  //This will be changed to "fetch User List" later
   //When the window is loaded
   useEffect(() => {
     setUserList([
@@ -42,7 +38,7 @@ const App = () => {
         <h1>React Form</h1>
       </header>
       <section className="userPanel">
-        <User user={userlist} />
+        <User userList={userlist} />
       </section>
       <section className="formPanel">
         <Form />
