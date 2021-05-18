@@ -5,7 +5,7 @@ import User from "./component/User/User.jsx";
 
 const App = () => {
   //state hook
-  const [userlist, setUserList] = useState();
+  const [userList, setUserList] = useState([]);
 
   //This will be changed to "fetch User List" later
   //When the window is loaded
@@ -37,11 +37,11 @@ const App = () => {
       <header className="App-header">
         <h1>React Form</h1>
       </header>
-      <section className="userPanel">
-        <User userList={userlist} />
-      </section>
       <section className="formPanel">
         <Form />
+      </section>
+      <section className="userPanel">
+        <User userList={userList} />
       </section>
     </>
   );

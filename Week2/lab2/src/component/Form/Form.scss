@@ -3,6 +3,12 @@ form {
     margin: 1rem;
     input {
       margin-left: 0.5rem;
+      border-radius: 5vw;
+      outline: none;
     }
+  }
+  .saveBtn {
+    border-radius: 5vw;
+    outline: none;
   }
 }

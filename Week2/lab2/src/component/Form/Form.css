@@ -4,5 +4,12 @@ form label {
 
 form label input {
   margin-left: 0.5rem;
+  border-radius: 5vw;
+  outline: none;
+}
+
+form .saveBtn {
+  border-radius: 5vw;
+  outline: none;
 }
 /*# sourceMappingURL=Form.css.map */
