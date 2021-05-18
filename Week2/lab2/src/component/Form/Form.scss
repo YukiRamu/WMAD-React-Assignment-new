@@ -1,4 +1,8 @@
 form {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 1rem;
   label {
     margin: 1rem;
     input {
@@ -6,9 +10,17 @@ form {
       border-radius: 5vw;
       outline: none;
     }
+    .emailInput {
+      width: 30vw;
+    }
+    .phraseInput {
+      width: 30vw;
+    }
   }
   .saveBtn {
     border-radius: 5vw;
     outline: none;
+    width: fit-content;
+    margin-left: 1rem;
   }
 }
