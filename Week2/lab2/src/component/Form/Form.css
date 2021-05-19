@@ -13,7 +13,7 @@ form {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: #a9a9a9;
+  background-color: #caf7e362;
   border-radius: 3vw;
 }
 
@@ -26,6 +26,12 @@ form .closeBtn {
   position: absolute;
   top: 5%;
   right: 5%;
+  border: 0.1rem groove #98ddca;
+  background-color: #edffec;
+}
+
+form .closeBtn:hover {
+  background-color: #98ddca;
 }
 
 form .id {
@@ -40,6 +46,7 @@ form label input {
   margin-left: 0.5rem;
   border-radius: 5vw;
   outline: none;
+  padding: 0.5rem;
 }
 
 form label .email {
@@ -57,5 +64,11 @@ form .saveBtn {
   width: -moz-fit-content;
   width: fit-content;
   margin-left: 1rem;
+  border: 0.1rem groove #98ddca;
+  background-color: #edffec;
+}
+
+form .saveBtn:hover {
+  background-color: #98ddca;
 }
 /*# sourceMappingURL=Form.css.map */

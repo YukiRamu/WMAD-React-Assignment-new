@@ -1,7 +1,7 @@
 .row {
   justify-content: center;
   .user {
-    border: 0.1rem solid lightsalmon;
+    border: 0.1rem solid #98ddca;
     margin: 0.5rem;
     width: 30%;
     p {
@@ -16,8 +16,13 @@
       padding: 0.3rem;
       margin: 1rem;
       border-radius: 5vw;
+      border: 0.1rem groove #98ddca;
       outline: none;
       width: 10vw;
+      background-color: #edffec;
+      &:hover {
+        background-color:#98ddca ;
+      }
     }
   }
 }

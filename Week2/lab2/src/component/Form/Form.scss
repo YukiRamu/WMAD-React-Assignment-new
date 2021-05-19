@@ -7,7 +7,7 @@ form {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: #a9a9a9;
+  background-color: #caf7e362;
   border-radius: 3vw;
   .closeBtn {
     border-radius: 3vw;
@@ -16,6 +16,11 @@ form {
     position: absolute;
     top: 5%;
     right: 5%;
+    border: 0.1rem groove #98ddca;
+    background-color: #edffec;
+    &:hover {
+      background-color: #98ddca;
+    }
   }
   .id {
     display: none;
@@ -26,6 +31,7 @@ form {
       margin-left: 0.5rem;
       border-radius: 5vw;
       outline: none;
+      padding: 0.5rem;
     }
     .email {
       width: 30vw;
@@ -39,5 +45,10 @@ form {
     outline: none;
     width: fit-content;
     margin-left: 1rem;
+    border: 0.1rem groove #98ddca;
+    background-color: #edffec;
+    &:hover {
+      background-color: #98ddca;
+    }
   }
 }
