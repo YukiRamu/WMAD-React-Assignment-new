@@ -13,7 +13,7 @@ form {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  background-color: #caf7e362;
+  background-color: rgba(255, 255, 255, 0.731);
   border-radius: 3vw;
 }
 

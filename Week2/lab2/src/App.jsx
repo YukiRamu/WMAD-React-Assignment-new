@@ -7,7 +7,7 @@ const App = () => {
   //state hook : array of object
   const [userList, setUserList] = useState([]);
   const [editUserFlg, setEditUser] = useState(false);
-  const [modalStyle, setModal] = useState({}); //form modal
+  const [modalStyle, setModal] = useState(); //form modal
   const [singleUser, setUser] = useState({}); //edit and update form
 
   //When the window is loaded
