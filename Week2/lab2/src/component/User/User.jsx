@@ -1,34 +1,30 @@
 import React, { useState, useEffect } from "react";
 import "./User.css";
+import "../Form/Form";
 
 const User = (props) => {
-  //state hook
-  console.log("props is ", props.userList);
-
-  console.log(props.userList.length);
-
+  console.log(props);
 
   return (
     <>
-      <div>
+      <div className="row">
         {/* map userlist */}
-        {props.userList.length !== 0 ? props.userList.map((elem, index) =>
-          <p className="name" key={index}>{elem["name"]}</p>
-        ) : ""}
-        {props.userList.length !== 0 ? props.userList.map((elem, index) =>
-          <p className="name" key={index}>{elem["email"]}</p>
-        ) : ""}
-        <button type="button" className="delBtn">Delete User</button>
-        <button type="button" className="editBtn">Edit Contact</button>
+        {props.userList.length !== 0 ?
+          props.userList.map((elem, index) =>
+            <div className="col-md-4 user row" key={index + "_userPanel"}>
+              <p className="name" key={index + "_name"}>Name: {elem["name"]}</p>
+              <p className="email" key={index + "_email"}>Email: {elem["email"]}</p>
+              <p className="companyPhrase" key={index + "_phrase"}>Company Phrase: {elem["phrase"]}</p>
+              <button type="button" className="delBtn" key={index + "_del"} id={index}
+                onClick={event => props.delUserFunc(event)}>Delete User</button>
+              <button type="button" className="editBtn" key={index + "_edit"} id={index}
+                onClick={event => props.editUserFunc(event)}>Edit Contact</button>
+            </div>
+          ) :
+          ""}
       </div>
     </>
   );
-
 };
 
 export default User;
-
-// object Object issue
-// +
-//             <p className="email" key={index}>{elem["email"]}</p> +
-//             <p className="companyPhrase" key={index}>{elem["phrase"]}</p>

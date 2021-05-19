@@ -1,9 +1,20 @@
-p {
- // text-align: left;
-}
-.delBtn,
-.editBtn {
-  margin:1rem;
-  border-radius: 5vw;
-  outline: none;
+.row {
+  justify-content: center;
+  .user {
+    border: 0.1rem solid lightsalmon;
+    margin: 0.5rem;
+    width: 30%;
+    p {
+      text-align: left;
+      margin-bottom: 0.5rem;
+    }
+    .delBtn,
+    .editBtn {
+      padding: 0.3rem;
+      margin: 1rem;
+      border-radius: 5vw;
+      outline: none;
+      width: 10vw;
+    }
+  }
 }

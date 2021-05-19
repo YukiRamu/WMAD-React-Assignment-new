@@ -1,11 +1,19 @@
 .App-header {
   h1 {
     font-family: 'Indie Flower', cursive;
+    text-align: center;
   }
 }
-.userPanel {
-  text-align: center;
-}
 .formPanel {
+  display: none;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.813);
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.userPanel {
   text-align: center;
 }

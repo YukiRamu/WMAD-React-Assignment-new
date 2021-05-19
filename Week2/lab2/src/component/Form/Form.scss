@@ -2,7 +2,21 @@ form {
   display: flex;
   flex-direction: column;
   text-align: left;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #a9a9a9;
+  border-radius: 3vw;
+  .closeBtn {
+    border-radius: 3vw;
+    outline: none;
+    width: fit-content;
+    position: absolute;
+    top: 5%;
+    right: 5%;
+  }
   label {
     margin: 1rem;
     input {
@@ -18,7 +32,7 @@ form {
     }
   }
   .saveBtn {
-    border-radius: 5vw;
+    border-radius: 3vw;
     outline: none;
     width: fit-content;
     margin-left: 1rem;

@@ -7,7 +7,25 @@ form {
       -ms-flex-direction: column;
           flex-direction: column;
   text-align: left;
-  padding: 1rem;
+  padding: 1rem 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background-color: #a9a9a9;
+  border-radius: 3vw;
+}
+
+form .closeBtn {
+  border-radius: 3vw;
+  outline: none;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  top: 5%;
+  right: 5%;
 }
 
 form label {
@@ -29,7 +47,7 @@ form label .phraseInput {
 }
 
 form .saveBtn {
-  border-radius: 5vw;
+  border-radius: 3vw;
   outline: none;
   width: -webkit-fit-content;
   width: -moz-fit-content;
