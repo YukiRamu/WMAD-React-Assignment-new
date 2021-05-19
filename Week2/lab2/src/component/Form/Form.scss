@@ -17,6 +17,9 @@ form {
     top: 5%;
     right: 5%;
   }
+  .id {
+    display: none;
+  }
   label {
     margin: 1rem;
     input {
@@ -24,10 +27,10 @@ form {
       border-radius: 5vw;
       outline: none;
     }
-    .emailInput {
+    .email {
       width: 30vw;
     }
-    .phraseInput {
+    .phrase {
       width: 30vw;
     }
   }

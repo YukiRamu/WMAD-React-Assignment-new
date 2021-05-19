@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./User.css";
 import "../Form/Form";
 
+//props = userList
 const User = (props) => {
-  console.log(props);
-
   return (
     <>
       <div className="row">
@@ -12,6 +11,7 @@ const User = (props) => {
         {props.userList.length !== 0 ?
           props.userList.map((elem, index) =>
             <div className="col-md-4 user row" key={index + "_userPanel"}>
+              <p className="id" key={index + "_id"}>ID: {elem["id"]}</p>
               <p className="name" key={index + "_name"}>Name: {elem["name"]}</p>
               <p className="email" key={index + "_email"}>Email: {elem["email"]}</p>
               <p className="companyPhrase" key={index + "_phrase"}>Company Phrase: {elem["phrase"]}</p>

@@ -28,6 +28,10 @@ form .closeBtn {
   right: 5%;
 }
 
+form .id {
+  display: none;
+}
+
 form label {
   margin: 1rem;
 }
@@ -38,11 +42,11 @@ form label input {
   outline: none;
 }
 
-form label .emailInput {
+form label .email {
   width: 30vw;
 }
 
-form label .phraseInput {
+form label .phrase {
   width: 30vw;
 }
 
