@@ -6,9 +6,15 @@ import User from "./component/User/User.jsx";
 const App = () => {
   //state hook : array of object
   const [userList, setUserList] = useState([]);
-  const [editUserFlg, setEditUser] = useState(false);
-  const [modalStyle, setModal] = useState(); //form modal
-  const [singleUser, setUser] = useState({}); //edit and update form
+  // const [editUserFlg, setEditUser] = useState(false);
+  const [modalStyle, setModal] = useState({}); //form modal
+  const [singleUser, setUser] = useState({
+    id: "",
+    name: "",
+    email: "",
+    phrase: "",
+    editUserFlg: false
+  }); //edit and update form : if I don't set the initial value, I will get the warning.
 
   //When the window is loaded
   useEffect(() => {
@@ -27,7 +33,7 @@ const App = () => {
               id: elem.id,
               name: elem.name,
               email: elem.email,
-              phrase: elem.company.catchPhrase
+              phrase: elem.company.catchPhrase,
             };
           }));
         }
@@ -61,7 +67,7 @@ const App = () => {
 
   //when the edit button is clicked --> form will open
   const editUser = (event) => {
-    console.log("edit button is clicked");
+    console.log("!!!!!!!!edit button is clicked!!!!!!!!!!!");
     //get target idm name, email and company phrase and set state hook
     let id = event.target.previousSibling.previousSibling.previousSibling.previousSibling.previousSibling.innerText.slice(4);
 
@@ -76,19 +82,24 @@ const App = () => {
       id: id,
       name: name,
       email: email,
-      phrase: phrase
+      phrase: phrase,
+      editUserFlg: true //turn on editing flag
     });
-
-    //set editUserFlg
-    setEditUser(true);
 
     //show form modal
     setModal({ "display": "block" });
   };
 
   //when the save button is clicked --> update the userlist
-  const updateUser = (targetIndex) => {
-    console.log(targetIndex, userList, singleUser);
+  const updateUser = (targetId) => {
+    console.log(targetId, userList, singleUser);
+    console.log(typeof (targetId));
+
+    //find the index of userList that has the id = targetId
+    let targetIndex = userList.findIndex(elem => elem.id == targetId);
+    console.log(targetIndex);
+
+    //delete the old element from userList and add a new element
     let updatedUserList = userList.splice(targetIndex, 1, singleUser);
     console.log(updatedUserList);
   };
