@@ -6,7 +6,7 @@ import User from "./component/User/User.jsx";
 const App = () => {
   //state hook : array of object
   const [userList, setUserList] = useState([]);
-  // const [editUserFlg, setEditUser] = useState(false);
+  const [maxId, setMaxId] = useState(); //for add user feature
   const [modalStyle, setModal] = useState({}); //form modal
   const [singleUser, setUser] = useState({
     id: "",
@@ -16,7 +16,7 @@ const App = () => {
     editUserFlg: false
   }); //edit and update form : if I don't set the initial value, I will get the warning.
 
-  //When the window is loaded
+  /*========== When the window is loaded ==========*/
   useEffect(() => {
     //fetch user
     const fetchUser = async () => {
@@ -26,8 +26,12 @@ const App = () => {
           throw (response.statusText);
         } else {
           const userData = await response.json();
-          console.log(userData);
-          //set state hook: array of object
+
+          //set state hook: maxId for add new usr feature
+          // let maxId = userData.reduce((a, b) => a.id > b.id ? a.id : b.id);
+          setMaxId(Math.max(...userData.map(elem => elem.id)));
+
+          //set state hook: userList : array of object
           setUserList(userData.map((elem) => {
             return {
               id: elem.id,
@@ -48,7 +52,7 @@ const App = () => {
     };
   }, []);
 
-  //when the delete button is clicked (User.js)--> delete the user
+  /* =========== when the delete button is clicked in User.js)=========== */
   const deleteUser = (event) => {
     //find the target name from userList (state hook)
     let targetName = event.target.previousSibling.previousSibling.previousSibling.innerText.slice(6);
@@ -65,7 +69,7 @@ const App = () => {
     // setUserList(userList)
   };
 
-  //when the edit button is clicked --> form will open
+  /* =========== when the edit button is clicked --> form will open ===========*/
   const editUser = (event) => {
     console.log("!!!!!!!!edit button is clicked!!!!!!!!!!!");
     //get target idm name, email and company phrase and set state hook
@@ -79,43 +83,78 @@ const App = () => {
 
     //to open form modal with current input value
     setUser({
-      id: id,
+      id: id, //string
       name: name,
       email: email,
       phrase: phrase,
-      editUserFlg: true //turn on editing flag
+      editUserFlg: true, //turn on editing flag
+      maxId: maxId
     });
 
     //show form modal
     setModal({ "display": "block" });
   };
 
-  //when the save button is clicked --> update the userlist
+  /* ========= when the save button is clicked --> update the userlist ==========*/
   const updateUser = (targetId) => {
-    console.log(targetId, userList, singleUser);
+    console.log("updating a single user ", targetId, userList, singleUser);
     console.log(typeof (targetId));
 
     //find the index of userList that has the id = targetId
     let targetIndex = userList.findIndex(elem => elem.id == targetId);
-    console.log(targetIndex);
+    console.log("tragetIndex is ", targetIndex);
 
-    //delete the old element from userList and add a new element
-    let updatedUserList = userList.splice(targetIndex, 1, singleUser);
-    console.log(updatedUserList);
+    //**************** Working on an adding user feature ********** */
+    if (targetIndex === -1) {
+      //adding a new user
+      userList.push({
+        id: targetId,
+        name: singleUser.name,
+        email: singleUser.email,
+        phrase: singleUser.phrase,
+      });
+      setUserList(userList);
+    } else {
+      //updating the existing user
+      //delete the old element from userList and add a new element
+      userList.splice(targetIndex, 1, singleUser);
+    }
+  };
+
+  /*========== When the add new button is clicked --> form will open  ==========*/
+  const addNewUser = () => {
+    //to open form modal with empty
+    setUser({
+      id: null, //number
+      name: "",
+      email: "",
+      phrase: "",
+      editUserFlg: true, //turn on editing flag
+      maxId: maxId
+    });
+
+    //show form modal
+    setModal({ "display": "block" });
   };
 
   return (
     <>
+      {/* Header and buttonsr */}
       <header className="App-header">
         <h1>React Form : User List</h1>
       </header>
-      {/* Form Modal */}
+
+      <button type="button" onClick={addNewUser}>Add New</button>
+
+      {/* Form Modal : default display none */}
       <section className="formPanel" style={modalStyle}>
         <Form
           user={singleUser}
+          maxId={maxId}
           setModal={setModal}
           setUser={setUser}
-          updateUser={updateUser} />
+          updateUser={updateUser}
+          setMaxId={setMaxId} />
       </section>
       <section className="userPanel">
         <User

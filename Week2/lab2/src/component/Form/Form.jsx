@@ -3,23 +3,21 @@ import "./Form.css";
 
 //props = singleUser
 const Form = (props) => {
-
-  console.log("editing user is ", props);
+  console.log("Form.js props is", props);
 
   //when the input is changed
   const handleChange = (event) => {
-    console.log("input changed");
+    console.log("!!!!!!!!!!!!!!!! input changed !!!!!!!!!!!!!!!!!!");
     console.log(event);
     console.log("id", props.user.id);
     console.log("name", props.user.name);
     console.log("email", props.user.email);
     console.log("phrase", props.user.phrase);
+    console.log("maxId", props.maxId);
 
-
-    //find which input is changed
-    console.log(event.target.className);
-    //need to change state hook so as to change the value of input
-    //update only the target input
+    /* find which input is changed and need to change state hook
+    // so as to change the value of input 
+    // update only the target input */
     switch (event.target.className) {
       case "name":
         props.setUser({
@@ -28,6 +26,7 @@ const Form = (props) => {
           email: props.user.email,
           phrase: props.user.phrase,
           editUserFlg: props.user.editUserFlg,
+          maxId: props.maxId
         });
         break;
       case "email":
@@ -37,6 +36,7 @@ const Form = (props) => {
           email: event.target.value,  //update
           phrase: props.user.phrase,
           editUserFlg: props.user.editUserFlg,
+          maxId: props.maxId
         });
         break;
       case "phrase":
@@ -46,6 +46,7 @@ const Form = (props) => {
           email: props.user.email,
           phrase: event.target.value,  //update,
           editUserFlg: props.user.editUserFlg,
+          maxId: props.maxId
         });
         break;
       default:
@@ -64,10 +65,17 @@ const Form = (props) => {
     console.log("email", props.user.email);
     console.log("phrase", props.user.phrase);
     console.log("editing flag", props.user.editUserFlg);
+    console.log("maxId is ", props.maxId);
 
-    //get the index from userList to be updated (id-1)
-    let targetId = event.target.childNodes[1].innerText;
-    console.log(targetId);
+    let targetId;
+    if (props.user.id === "") {
+      //when adding a new user
+      targetId = props.user.maxId + 1;
+    } else {
+      //when ediding the existing user
+      //get the index from userList to be updated
+      targetId = event.target.childNodes[1].innerText; //string
+    }
 
     //update the user 
     props.updateUser(targetId);
