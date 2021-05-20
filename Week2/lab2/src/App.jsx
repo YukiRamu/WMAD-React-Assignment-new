@@ -104,7 +104,6 @@ const App = () => {
     let targetIndex = userList.findIndex(elem => elem.id == targetId);
     console.log("tragetIndex is ", targetIndex);
 
-    //**************** Working on an adding user feature ********** */
     if (targetIndex === -1) {
       //adding a new user
       userList.push({
