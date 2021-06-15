@@ -1,0 +1,11 @@
+.userContainer {
+  h1 {
+    text-align: center;
+  }
+  .userRow {
+    margin: 2rem;
+    .col {
+      border: 0.1rem solid gray;
+    }
+  }
+}

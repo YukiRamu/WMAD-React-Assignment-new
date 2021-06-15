@@ -1,0 +1,12 @@
+.userContainer h1 {
+  text-align: center;
+}
+
+.userContainer .userRow {
+  margin: 2rem;
+}
+
+.userContainer .userRow .col {
+  border: 0.1rem solid gray;
+}
+/*# sourceMappingURL=Users.css.map */
