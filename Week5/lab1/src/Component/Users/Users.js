@@ -8,6 +8,12 @@ const Users = () => {
   const { users, dispatchUser } = useContext(UserContext);
 
   const [modalStyle, setModalStyle] = useState({ "display": "none" });
+  const [updateUser, setUpdateUser] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: { city: "" }
+  });
   console.log(users);
 
   const hideModal = () => {
@@ -56,10 +62,11 @@ const Users = () => {
                         <Form.Control
                           type="text"
                           placeholder="Enter name"
+                          value={users.edit.item[0].name}
+                          onChange={(e) => { setUpdateUser({ ...updateUser, name: e.target.value }); }}
                         />
                       </Form.Group>
                     </Form>
-                    <p>Name: Yuki</p>
                     <p>Email: yuki@gmail.com</p>
                     <p>Phone#: 2355545555</p>
                     <p>City: Vancouver</p>
