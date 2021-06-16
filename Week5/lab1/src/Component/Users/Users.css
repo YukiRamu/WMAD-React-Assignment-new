@@ -1,12 +1,22 @@
 .userContainer h1 {
   text-align: center;
+  margin-top: 1rem;
 }
 
 .userContainer .userRow {
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   margin: 2rem;
 }
 
 .userContainer .userRow .col {
-  border: 0.1rem solid gray;
+  margin: 0.5rem;
+  border: 0.1rem solid lightcoral;
+  width: 20vw;
+}
+
+.userContainer .userRow .col .delBtn {
+  margin-bottom: 1rem;
 }
 /*# sourceMappingURL=Users.css.map */

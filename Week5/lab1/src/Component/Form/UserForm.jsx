@@ -1,29 +1,33 @@
-import React, { useContext, useReducer } from 'react';
+import React, { useContext, useState } from 'react';
 import UserContext from '../../Context/UserContext';
 import { Form, Button } from 'react-bootstrap';
 import "./UserForm.css";
 
 const UserForm = () => {
 
-  //for input onChange
-  const { user, setUser } = useContext(UserContext);
+  const { users, dispatchUser } = useContext(UserContext);
+  const [newUser, setNewUser] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    address: { city: "" }
+  });
 
-  const AddUser = (dispatch, e) => {
+  const AddUser = (e) => {
     e.preventDefault();
-    console.log(dispatch);
-    console.log(e);
+    dispatchUser({ type: "ADD", payload: newUser });
   };
 
   return (
     <>
-      {/* <Form >
+      <Form className="userForm" onSubmit={AddUser}>
         <Form.Group>
           <Form.Label>Name</Form.Label>
           <Form.Control
             type="text"
             placeholder="Enter name"
-            onChange={(e) => { setUser({ ...user, name: e.target.value }); }}
-            value={user.name} />
+            onChange={(e) => { setNewUser({ ...newUser, name: e.target.value }); }}
+            value={newUser.name} />
         </Form.Group>
 
         <Form.Group controlId="formBasicEmail">
@@ -31,8 +35,8 @@ const UserForm = () => {
           <Form.Control
             type="email"
             placeholder="Enter email"
-            onChange={(e) => { setUser({ ...user, email: e.target.value }); }}
-            value={user.email} />
+            onChange={(e) => { setNewUser({ ...newUser, email: e.target.value }); }}
+            value={newUser.email} />
         </Form.Group>
 
         <Form.Group>
@@ -40,8 +44,8 @@ const UserForm = () => {
           <Form.Control
             type="text"
             placeholder="Enter phone number"
-            onChange={(e) => { setUser({ ...user, phone: e.target.value }); }}
-            value={user.phone} />
+            onChange={(e) => { setNewUser({ ...newUser, phone: e.target.value }); }}
+            value={newUser.phone} />
         </Form.Group>
 
         <Form.Group>
@@ -49,16 +53,13 @@ const UserForm = () => {
           <Form.Control
             type="text"
             placeholder="Enter city"
-            onChange={(e) => { setUser({ ...user, city: e.target.value }); }}
-            value={user.city} />
+            onChange={(e) => { setNewUser({ ...newUser, address: { city: e.target.value } }); }}
+            value={newUser.city} />
         </Form.Group>
 
-        <Button className="addUserBtn" type="submit">Add user</Button>
-
-      </Form> */}
+        <Button variant="outline-info" className="addUserBtn" type="submit">Add user</Button>
+      </Form>
     </>
-
-
   );
 };
 

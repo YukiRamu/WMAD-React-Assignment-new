@@ -1,1 +1,9 @@
-/* No CSS *//*# sourceMappingURL=UserForm.css.map */
+.userForm {
+  width: 80%;
+  margin: auto;
+}
+
+.userForm .addUserBtn {
+  margin-top: 1rem;
+}
+/*# sourceMappingURL=UserForm.css.map */

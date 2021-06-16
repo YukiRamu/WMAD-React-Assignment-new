@@ -1,11 +1,18 @@
 .userContainer {
   h1 {
     text-align: center;
+    margin-top: 1rem;
   }
   .userRow {
+    justify-content: center;
     margin: 2rem;
     .col {
-      border: 0.1rem solid gray;
+      margin: 0.5rem;
+      border: 0.1rem solid lightcoral;
+      width: 20vw;
+      .delBtn {
+        margin-bottom: 1rem;
+      }
     }
   }
 }

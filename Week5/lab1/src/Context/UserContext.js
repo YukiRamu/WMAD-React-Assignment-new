@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, useReducer } from 'react';
+import React, { createContext, useEffect, useReducer } from 'react';
 import UserReducer from '../Reducer/UserReducer';
 
 //create Context
@@ -6,15 +6,12 @@ const UserContext = createContext();
 
 //initial state for reducer
 const initialState = {
-  name: "",
-  email: "",
-  phone: "",
-  city: ""
+  userData: []
 };
 
 const UserProvider = (props) => {
 
-  const [userData, setUserData] = useState();
+  // const [userData, setUserData] = useState({});
   const [users, dispatchUser] = useReducer(UserReducer, initialState);
 
   //fetch API
@@ -25,9 +22,9 @@ const UserProvider = (props) => {
         if (!res.ok) {
           throw res.statusText;
         } else {
-          const userData = await res.json();
-          console.log(userData);
-          setUserData(userData);
+          const data = await res.json();
+          dispatchUser({ type: "FETCH_SUCCESS", payload: data });
+          // setUserData(userData);
         }
       } catch (error) {
         console.error(`Failed to fetch user data. Error= ${error}`);
@@ -38,8 +35,6 @@ const UserProvider = (props) => {
   return (
     <>
       <UserContext.Provider value={{
-        userData,
-        setUserData,
         users,
         dispatchUser
       }}>
