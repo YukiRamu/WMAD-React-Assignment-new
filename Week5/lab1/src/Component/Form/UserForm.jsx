@@ -5,7 +5,7 @@ import "./UserForm.css";
 
 const UserForm = () => {
 
-  const { users, dispatchUser } = useContext(UserContext);
+  const { dispatchUser } = useContext(UserContext);
   const [newUser, setNewUser] = useState({
     name: "",
     email: "",

@@ -6,7 +6,8 @@ const UserContext = createContext();
 
 //initial state for reducer
 const initialState = {
-  userData: []
+  userData: [],
+  edit: { flag: false, id: null }
 };
 
 const UserProvider = (props) => {
